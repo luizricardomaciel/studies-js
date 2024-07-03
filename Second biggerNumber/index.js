@@ -1,7 +1,7 @@
 // // // Exemplos de uso da função:
 console.log(segundoMaior1([10, 5, 7, 2])); // Deve retornar 7
 console.log(segundoMaior1([10, 10, 7, 2])); // Deve retornar 7
-console.log(segundoMaior1([3, 1, 4, 4, 5, 5])); // Deve retornar 4
+console.log(segundoMaior2([3, 1, 4, 4, 5, 5])); // Deve retornar 4
 
 function segundoMaior1(lista) {
     let values = lista;
@@ -17,12 +17,14 @@ function segundoMaior2(lista) {
     lista.sort(function(a,b){
         return b - a;
     });
-    for (i = 0; i < lista.length ; i++) {A
-        if(lista[i] !== lista[i+1]){
-                valuesATT.push(lista[i]);
-            };
-        };
-        return valuesATT[1]
+  
+    let anterior = 0
+    for (atual of lista) {
+        if(anterior !== atual){
+            valuesATT.push(atual)
+        }   
+        anterior = atual
+    }
+    return valuesATT[1]
     };
-    
     
