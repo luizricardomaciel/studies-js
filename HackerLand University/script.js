@@ -4,13 +4,11 @@ function organize(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] + 1 < 39 || arr[i] + 2 < 39) {
     } else {
-      if ((arr[i] + 1) % 5 == 0) {
-        a[i] = arr[i] + 1;
-      } else {
-        if ((arr[i] + 2) % 5 == 0) {
-          a[i] = arr[i] + 2;
-        }
+      let guardado = arr[i];
+      while (guardado % 5 != 0) {
+        guardado++;
       }
+      arr[i] = guardado;
     }
   }
   return a;
