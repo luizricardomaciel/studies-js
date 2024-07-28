@@ -1,28 +1,26 @@
-const arr = [1, 1, 2, 2, 3];
+const arr = [2, 4, 3, 2, 3, 1, 2, 1, 3, 3];
 
 const migratoryBirds = (arr) => {
-  let numbers = [];
+  let birdscount = {};
+  let maxCount = 0;
+  let result = 0;
 
-  // Loop para percorrer o array arr
-  for (let i = 0; i < arr.length; i++) {
-    let found = false;
-
-    // Verifica se o número já está no array numbers
-    for (let j = 0; j < numbers.length; j++) {
-      if (numbers[j].number === arr[i]) {
-        numbers[j].sum += 1;
-        found = true;
-        break;
-      }
+  for (let i of arr) {
+    if (birdscount[i]) {
+      birdscount[i]++;
+    } else {
+      birdscount[i] = 1;
     }
-
-    // Se o número não foi encontrado, adiciona ao array numbers
-    if (!found) {
-      numbers.push({ number: arr[i], sum: 1 });
-    }
+    git;
   }
 
-  console.log(numbers);
+  for (bird in birdscount) {
+    if (birdscount[bird] > maxCount) {
+      maxCount = birdscount[bird];
+      result = bird;
+    }
+  }
+  console.log(result);
 };
 
 migratoryBirds(arr);
