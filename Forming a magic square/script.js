@@ -21,15 +21,9 @@ function formingMagicSquare(s) {
   for (let square in squareMagic) {
     let minus = null;
     for (let i = 0; i < array.length; i++) {
-      if (squareMagic[square][i] > array[i]) {
-        minus += squareMagic[square][i] - array[i];
-      } else {
-        minus += array[i] - squareMagic[square][i];
-      }
+      minus += Math.abs(array[i] - squareMagic[square][i]);
     }
-    if (result > minus) {
-      result = minus;
-    }
+    result = Math.min(result, minus);
   }
   console.log(result);
 }
