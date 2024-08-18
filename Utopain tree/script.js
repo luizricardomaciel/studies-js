@@ -1,6 +1,6 @@
 const n = [0, 1];
 
-utopianTreee = (n) => {
+utopianTree = (n) => {
   let result = [];
 
   for (let j = 0; j < n.length; j++) {
